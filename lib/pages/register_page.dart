@@ -81,9 +81,34 @@ class RegisterPage extends StatelessWidget {
                     ),
                     backgroundColor: Colors.redAccent,
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    _personProvider.deletePerson();
+                  },
                   child: Text(
                     'Eliminar',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 20),
+              SizedBox(
+                width: double.infinity,
+                height: 50,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    backgroundColor: Colors.indigoAccent,
+                  ),
+                  onPressed: () {
+                    _personProvider.addProduct('Producto 1');
+                  },
+                  child: Text(
+                    'Agregar Producto',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 16,
