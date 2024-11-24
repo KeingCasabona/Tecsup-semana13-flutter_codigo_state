@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:state/models/person_model.dart';
+import 'package:state/providers/person_provider.dart';
 
 class RegisterPage extends StatelessWidget {
   RegisterPage({super.key});
@@ -9,6 +12,7 @@ class RegisterPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    PersonProvider _personProvider = Provider.of<PersonProvider>(context);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Register Page'),
@@ -49,7 +53,14 @@ class RegisterPage extends StatelessWidget {
                     ),
                     backgroundColor: Colors.blueAccent,
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    PersonModel person = PersonModel(
+                      name: nameController.text,
+                      lastName: lastNameController.text,
+                      address: addressController.text,
+                    );
+                    _personProvider.addNewPerson(person);
+                  },
                   child: Text(
                     'Guardar',
                     style: TextStyle(

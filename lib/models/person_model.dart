@@ -1,9 +1,9 @@
-class Person {
+class PersonModel {
   String name;
   String lastName;
   String address;
 
-  Person({
+  PersonModel({
     required this.name,
     required this.lastName,
     required this.address,
