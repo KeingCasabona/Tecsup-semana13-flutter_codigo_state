@@ -13,7 +13,9 @@ class PersonBloc extends Bloc<PersonEvent, PersonState> {
 
     on<DeletePerson>(
       (event, emit) {
-        print('Eliminar');
+        emit(
+          PersonState(personModel: null),
+        );
       },
     );
 
